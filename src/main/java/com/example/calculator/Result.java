@@ -4,6 +4,9 @@ public class Result {
 
     double result;
 
+    public Result() {
+    }
+
     public Result(double result) {
         this.result = result;
     }
