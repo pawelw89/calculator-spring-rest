@@ -5,10 +5,7 @@ import com.example.calculator.Services.DivService;
 import com.example.calculator.Services.MultService;
 import com.example.calculator.Services.SubService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("calculator")
@@ -27,22 +24,22 @@ public class CalculatorController {
     private DivService divService;
 
     @GetMapping("add")
-    public Result add(@RequestParam int a, @RequestParam int b) {
+    public Result add(@RequestParam double a, @RequestParam double b) {
         return addService.add(a, b);
     }
 
     @GetMapping("sub")
-    public Result sub(@RequestParam int a, @RequestParam int b) {
+    public Result sub(@RequestParam double a, @RequestParam double b) {
         return subService.sub(a, b);
     }
 
     @GetMapping("mult")
-    public Result mult(@RequestParam int a, @RequestParam int b) {
+    public Result mult(@RequestParam double a, @RequestParam double b) {
         return multService.mult(a, b);
     }
 
     @GetMapping("div")
-    public Result div(@RequestParam int a, @RequestParam int b) {
+    public Result div(@RequestParam double a, @RequestParam double b) {
         return divService.div(a, b);
     }
 
